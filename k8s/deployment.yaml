@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-webapi
+spec:
+  selector:
+    matchLabels:
+      app: dotnet-webapi
+  template:
+    metadata:
+      labels:
+        app: dotnet-webapi
+    spec:
+      containers:
+      - name: dotnet-webapi
+        image: wannabeegeek/dotnet-webapi:v2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
