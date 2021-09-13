@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksazsingaporemeetupdemo-5465"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksazsingaporemeetupdemo-5465"
+  template:
+    metadata:
+      labels:
+        app: "aksazsingaporemeetupdemo-5465"
+    spec:
+      containers:
+        - name: "aksazsingaporemeetupdemo-5465"
+          image: "acrazsingaporemeetupdemo.azurecr.io/aksazsingaporemeetupdemo5465"
+          ports:
+          - containerPort: 80
